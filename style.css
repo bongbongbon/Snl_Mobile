@@ -45,13 +45,11 @@
 .menu a{
     color: white;
     text-decoration: none;
-    padding: 0 10px;
 }
 
 .price, .casting{
     width: 800px;
     margin: 0 auto;
-    border: 1px solid black;
 }
 .price th, .casting th{
     width : 200px
@@ -59,16 +57,15 @@
 .price caption, .casting caption{
     font-size: 18px;
     font-weight: bolder;
-    margin-top:  30px;
-    margin-bottom: 20px;
+    margin: 30px 0 20px 0;
 }
 .price, .price th, .price td, .casting, .casting th, .casting td{
     border: 1px solid black;
     border-collapse: collapse;
-    text-align: center;
 }
 .price th, .price td, .casting th, .casting td {
-    padding: 10px 20px;
+    padding: 20px 0px;
+    text-align: center;
 }
 
 .sub_menu{
@@ -82,7 +79,7 @@
     justify-content: center;    
 }
 .sub_menu ul li{
-    padding: 20px ;
+    padding: 20px 0;
 }
 .sub_menu a{
     color: #666666;
@@ -92,10 +89,40 @@
 .site_info {
     background-color: black;
     text-align: center;
-    padding: 30px;
+    padding: 30px 0;
 }
 
 .site_info p {
     color: white;
     margin: 20px 0;
+}
+
+/*media query*/
+@media screen and (max-width: 360px){
+    #model {
+        width: 320px;
+        left: 50%; /*왼쪽 위치 : 화면의 중앙*/
+        margin-left: -160px; /* 왼쪽 여백 : 사진의 1/2 더 왼쪽으로*/
+    }
+    #model img {
+        width: 100%;
+    }
+    .menu a{
+       font-size: 14px;
+       letter-spacing: -2px; /* 자간 : 글자간격 좁게*/
+    }
+    .price, .casting{
+        width: 83.3333333333333%; /* 총 360px에 300px 크기는 몇 %일까요?*/
+    }
+    .price th, .casting th{
+        width : 25%;
+    }
+    .price th, .price td, .casting th, .casting td {
+        font-size: 14px;
+        letter-spacing: -1px;
+    }
+    .sub_menu a{
+        font-size: 14px;
+        letter-spacing: -1px;
+    }
 }
