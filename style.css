@@ -1,127 +1,186 @@
 @charset "utf-8";
-
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Serif KR', serif;
+}
+body {
+    font-family: 'Nanum Gothic', sans-serif;
 }
 
-.logo{
+.logo {
     width: 154px;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: 100px
 }
-
-.wide{
+.wide {
     height: 309px;
-    position: relative; /*위치 상대적으로*/
+    position: relative;    /* 위치 : 상대적으로 */
+    text-align: center; /* 텍스트-정렬 : 가운데   vs 이미지는 텍스트가 아닌데... */
     background-color: #006FFF;
-    text-align: center; /*텍스트의 정렬 : 가운데 vs 이미지는 텍스트가 아닌데...*/
-    background-image: url("images/visual-wide.png"); /* 배경-이미지 "url(경로/이름.형식)*/
-    background-repeat: no-repeat;                    /* 배경-반복 : 안함 */ 
-    background-position: center center;              /* 배경-위치 : (공간에서) 수평 수직*/
-
-    /* background: #006FFF url("images/visual-wide.png") no-repeat center center; */
+    background-image: url("images/visual-wide.png"); /* 배경-이미지 : url(경로/이름.형식) */
+    background-repeat: no-repeat;                    /* 배경-반복 : 안함 */
+    background-position: center center;              /* 배경-위치 : (공간에서) 수평 수직 */
 }
-#model{
-    position: absolute;    /* 위치 : (상대적인 기준점으로부터) 절대위치*/
-    bottom: 0;             /* 아래 : 0*/                                                
+#model {
+    position: absolute;     /* 위치 : (상대적인 기준점으로부터) 절대 위치 */
+    bottom: 0;              /* 아래 : 0 */
 }
-.menu{
-    background-color: black;
+.menu {
+    background-color: black;   /* 메뉴 배경색 */
 }
-.menu ul{
-    list-style-type: none; /* 목록-스타일-종류 : 없음(사각형,채워진 원, 빈원)*/
-    display: flex; /* 표시 : 플렉스(유연한 구조)*/
-    justify-content: center;    
-
-    /* display: flex; /*글자 나란히 텍스트 가운데 정렬*/
-    /* justify-content: center; */
+.menu ul {
+    list-style-type: none;  /* 목록-스타일-종류 : 없음 (사각형,채워진 원, 빈원) */
+    display: flex;    /* 표시 : 플렉스(유연한 구조?) */
+    justify-content: center; /* 컨텐츠-정렬 : 가로 가운데 */
 }
-.menu ul li, .sub_menu ul li{
+.menu ul li, .sub_menu ul li {
     padding: 20px 0;
-    margin: 0 20px;
+    margin: 0 20px
 }
-.menu a{
-    color: white;
-    text-decoration: none;
+.menu a {
+    color: white;    /* 메뉴 글자색 */
+    text-decoration: none;   /* 텍스트-꾸밈: 없음 */
 }
-
-.price, .casting{
+.sub_menu {
+    background-color: #fafafa;   /* 서브메뉴 배경색 */
+    border: 1px solid gray;
+    margin: 50px 0 0 0;   /* .casting과 .sub_menu 사이 공간 확보 */
+}
+.sub_menu ul {
+    list-style-type: none;  /* 목록-스타일-종류 : 없음 (사각형,채워진 원, 빈원) */
+    display: flex;    /* 표시 : 플렉스(유연한 구조?) */
+    justify-content: center; /* 컨텐츠-정렬 : 가로 가운데 */
+}
+.sub_menu ul li {
+    padding: 20px 0;
+}
+.sub_menu a {
+    color: #666666;    /* 메뉴 글자색 */
+    text-decoration: none;   /* 텍스트-꾸밈: 없음 */
+    font-size: 13px;
+}
+/* 입장 요금안내 표 */
+.price, .casting {
     width: 800px;
     margin: 0 auto;
 }
-.price th, .casting th{
-    width : 200px
+.price th, .casting th {
+    width: 200px;
 }
-.price caption, .casting caption{
+.price, .price th, .price td,.casting, .casting th, .casting td {
+    border: 1px solid black;
+    border-collapse: collapse; 
+}
+.price caption,.casting caption {
     font-size: 18px;
-    font-weight: bolder;
+    font-weight: bolder;  /* 글자-두께 : 더 두껍게 (폰트마다 다름) */
     margin: 30px 0 20px 0;
 }
-.price, .price th, .price td, .casting, .casting th, .casting td{
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-.price th, .price td, .casting th, .casting td {
-    padding: 20px 0px;
-    text-align: center;
-}
-
-.sub_menu{
-    background-color: #fafafa;
-    border: 1px solid black;
-    margin: 50px 0 0 0;
-}
-.sub_menu ul{
-    list-style-type: none; 
-    display: flex; 
-    justify-content: center;    
-}
-.sub_menu ul li{
+.price th, .price td, .casting th, .casting td  {
     padding: 20px 0;
-}
-.sub_menu a{
-    color: #666666;
-    text-decoration: none;
-    font-size: 13px;
+    text-align: center;
 }
 .site_info {
     background-color: black;
     text-align: center;
     padding: 30px 0;
 }
-
 .site_info p {
     color: white;
     margin: 20px 0;
 }
 
-/*media query*/
+.form_title {
+    max-width: 1190px;
+    margin: 50px auto;
+    padding: 20px 0;
+    background-color: #006FFF;  /* 배경색상 */
+    color: white;               /* 글자색상 */
+    text-align: center;           /* 가로 가운데 정렬 */
+}
+/* login form style */
+form, fieldset {
+    border: 0
+}
+form { /* mvp.css에서 form의 가로 크기를 제한함으로 이를 해결하기 위한 스타일 */
+    width: 100%;
+    max-width: 100%;
+}
+legend {
+    display: none;
+}
+.form_wrap {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.w-800 {
+    max-width: 800px;
+}
+.d-flex { /* 표시: 가로로 나란히 배치하는 클래스 */
+    display: flex;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-between {
+    justify-content: space-between;
+}
+.align-center {
+    align-items: center;
+}
+.d-flex label {
+    text-align: right;
+    margin-right: 1rem;
+    flex: 2
+}
+.d-flex input {
+    flex: 8;
+    padding: 1rem 0
+}
+.flex-8 {
+    flex: 8
+}
+
+.d-flex > div { /* 자손 선택자 : 직계 (아들,딸 선택자) */
+    margin-left: 75px;
+}
+[type=submit], [type=reset] { /* 속성 선택자 : <button type="submit">..</button>  : button 태그, type 속성, submit : 값 */
+    padding: 5px 20px;
+}
+[type=reset] {
+    margin-left: 1rem;
+    border:2px solid #006FFF;
+    color: #006FFF;
+    background-color: transparent /* 투명 */
+}
+.divider {
+    margin: 1rem 0; /* 1rem = 16px , Root Element의 약자, 알엠, 알이엠, 렘*/
+}
+
+a, a:link {
+    color: #006FFF;
+}
+/* media query */
 @media screen and (max-width: 360px){
     #model {
         width: 320px;
-        left: 50%; /*왼쪽 위치 : 화면의 중앙*/
-        margin-left: -160px; /* 왼쪽 여백 : 사진의 1/2 더 왼쪽으로*/
+        left: 50%;    /* 왼쪽 위치 : 화면의 중앙 */
+        margin-left: -160px; /* 왼쪽 여백 : 사진의 1/2 더 왼쪽으로 */
     }
     #model img {
         width: 100%;
     }
-    .menu a{
-       font-size: 14px;
-       letter-spacing: -2px; /* 자간 : 글자간격 좁게*/
-    }
-    .price, .casting{
-        width: 83.3333333333333%; /* 총 360px에 300px 크기는 몇 %일까요?*/
-    }
-    .price th, .casting th{
-        width : 25%;
-    }
-    .price th, .price td, .casting th, .casting td {
+    .menu a, .sub_menu a  {
         font-size: 14px;
-        letter-spacing: -1px;
+        letter-spacing: -2px;   /* 자간 : 글자간격 좁게 */
     }
-    .sub_menu a{
+    .price, .casting {
+        width: 83.33333333333333%; /* 총 360px에 300px 크기는 몇 %일까요? */    
+    }
+    .price th, .casting th {
+        width: 25%;
+    }
+    .price th, .price td, .casting th, .casting td  {
         font-size: 14px;
         letter-spacing: -1px;
     }
