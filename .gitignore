@@ -1,0 +1,14 @@
+# figma 스케치를 제외한다.
+*.fig
+/figma
+
+# window와 폴더의 정보를 담는 .db 파일을 자동 생성
+*.db
+Thumdbs.*
+
+# 각종 문서 파일
+*.hwp
+*.xlsx
+*.doc
+*.ppt
+*.pdf

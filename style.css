@@ -160,6 +160,19 @@ legend {
 a, a:link {
     color: #006FFF;
 }
+
+[type=text], [type=password], [type=tel], [type=email]{
+    text-indent: 1rem;
+}
+#reg_agree{
+    margin-bottom: 0;
+    margin-right: 1rem;
+}
+
+.d-flex > .ml-0 {
+    margin-left: 0 ;
+}
+
 /* media query */
 @media screen and (max-width: 360px){
     #model {
